@@ -41,6 +41,7 @@ func NewZeroNoise(q, r int) Noise {
 type Filter interface {
 	Apply(ctx *Context, z, ctrl *mat.VecDense) mat.Vector
 	State() mat.Vector
+	NextState(ctx *Context, ctrl *mat.VecDense) error
 }
 
 //filtImpl is the implementation of the filter interface
