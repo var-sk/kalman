@@ -27,6 +27,12 @@ func (r *roseImpl) State() mat.Vector {
 	return &state
 }
 
+//NextState
+func (f *roseImpl) NextState(ctx *Context, ctrl *mat.VecDense) error {
+	f.Std.NextState(ctx, ctrl)
+	return nil
+}
+
 type rose struct {
 	Gamma  float64
 	AlphaR float64
